@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../styles/RandomMenu.module.css';
 import { main1, main2, vega, soup } from '../data.js';
 
@@ -72,6 +72,10 @@ const RandomMenu = () => {
     newLockIds[idx] = itemData;
     setLockIds(newLockIds);
   }
+
+  useEffect(() => {
+    genMenu();
+  }, [])
 
   return (
     <div className={styles['wrapper']}>
